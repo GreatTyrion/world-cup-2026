@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# editor cruft
+.vscode/
+.idea/
+*.swp
+
+# node (only if you ever add tooling; the app itself needs none)
+node_modules/

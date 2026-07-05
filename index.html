@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1c9b5b" />
+  <title>World Cup 2026 — Fun Learning for Kids ⚽</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%BD%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <!-- Top bar: shown on every screen. Home + mute are always reachable. -->
+  <header class="topbar">
+    <button id="home-btn" class="topbar__btn" aria-label="Go to home screen">🏠 Home</button>
+    <span class="topbar__brand" aria-hidden="true">⚽ World Cup 2026</span>
+    <button id="mute-btn" class="topbar__btn topbar__btn--icon" aria-label="Toggle sound">🔊</button>
+  </header>
+
+  <!-- The current screen renders here. -->
+  <main id="screen" class="screen" role="main"></main>
+
+  <!-- Badge celebration toasts appear here. -->
+  <div id="toast-host" class="toast-host" aria-live="polite"></div>
+
+  <!-- ============================================================
+       Scripts are plain <script> tags (no modules) and data is in
+       .js files, so the app works even when index.html is opened
+       directly from the file system (double-click). ORDER MATTERS.
+       ============================================================ -->
+
+  <!-- 1) Content data -->
+  <script src="data/teams.js"></script>
+  <script src="data/facts.js"></script>
+  <script src="data/rules.js"></script>
+  <script src="data/quiz.js"></script>
+
+  <!-- 2) Core helpers -->
+  <script src="js/ui.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/audio.js"></script>
+
+  <!-- 3) Screens -->
+  <script src="js/screens/home.js"></script>
+  <script src="js/screens/countries.js"></script>
+  <script src="js/screens/rules.js"></script>
+  <script src="js/screens/facts.js"></script>
+  <script src="js/screens/games.js"></script>
+
+  <!-- 4) Games -->
+  <script src="js/games/common.js"></script>
+  <script src="js/games/quiz.js"></script>
+  <script src="js/games/flagMatch.js"></script>
+  <script src="js/games/guessCountry.js"></script>
+  <script src="js/games/trueFalse.js"></script>
+
+  <!-- 5) App boot + router (last) -->
+  <script src="js/app.js"></script>
+</body>
+</html>
