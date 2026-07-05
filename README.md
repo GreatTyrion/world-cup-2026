@@ -36,6 +36,33 @@ That's it. The app is the same either way.
 
 ---
 
+## 🌐 Put it online (optional — free with GitHub Pages)
+
+Because the app is just static files, it hosts anywhere with **no build step**.
+To publish it free on GitHub Pages:
+
+1. Create a new **public** repo on [github.com/new](https://github.com/new) (don't add a README — this project has one).
+2. From this folder, push it up:
+   ```bash
+   git init          # skip if already a repo
+   git add -A && git commit -m "World Cup 2026 kids app"
+   git branch -M main
+   git remote add origin https://github.com/<your-username>/world-cup-2026.git
+   git push -u origin main
+   ```
+3. In the repo: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`** → Save.
+4. After ~1 minute your app is live at
+   `https://<your-username>.github.io/world-cup-2026/`.
+
+The app uses relative paths and hash-based navigation, so it works correctly at
+that sub-folder URL with no extra configuration. The included `.nojekyll` file
+tells GitHub to serve every file as-is.
+
+> **Tip:** After editing any content, run `git add -A && git commit -m "update" && git push`
+> and Pages redeploys automatically.
+
+---
+
 ## 🎮 What's inside
 
 | Section | What kids do |
@@ -66,11 +93,11 @@ updates automatically.
 
 Each file starts with a short **HOW TO EDIT** comment showing the format.
 
-> **📌 Note on the team list:** The three hosts always play. The other teams are
-> real nations that had qualified (or were on track to) as of early 2026. The
-> very last few spots are decided by playoff matches in **March 2026** — if a team
-> here didn't make it, or one is missing, just edit `data/teams.js`. It's designed
-> to be updated in seconds.
+> **📌 Note on the team list:** `data/teams.js` contains the full, confirmed
+> **48-team** field for World Cup 2026, grouped by confederation (3 hosts +
+> Europe 16 + Africa 10 + Asia 9 + South America 6 + North/Central America 6 +
+> Oceania 1). If FIFA details ever change, or you just want to tweak a nickname
+> or fun fact, edit `data/teams.js` — the app updates in seconds.
 
 > **🚩 Note on flags:** Flags are shown as emoji, which look great on Macs, iPads,
 > Android, and Chromebooks. A few Windows browsers don't draw flag emojis — for
