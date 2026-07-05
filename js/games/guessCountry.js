@@ -48,12 +48,24 @@ window.WC.games.guessCountry = (function () {
       optionsWrap.appendChild(btn);
     });
 
+    // The 3-letter code is a hint kids can choose to reveal (it makes the flag
+    // much easier), so it starts hidden behind a "Show hint" button.
+    var codeEl = window.WC.ui.el("span.guess-flag__code", { text: answer.code, hidden: true });
+    var hintBtn = window.WC.ui.el("button.btn.btn--soft.guess-hint", {
+      onclick: function () {
+        window.WC.audio.blip();
+        codeEl.hidden = false;
+        hintBtn.remove();
+      }
+    }, ["💡 Show hint"]);
+
     var card = window.WC.ui.el(".guess-card.enter-slide", null, [
       window.WC.ui.el(".quiz-counter", { text: "Flag " + (index + 1) + " of " + rounds.length }),
       window.WC.ui.el(".guess-flag", null, [
         window.WC.ui.el("span.guess-flag__emoji", { text: answer.flag, "aria-hidden": "true" }),
-        window.WC.ui.el("span.guess-flag__code", { text: answer.code })
+        codeEl
       ]),
+      hintBtn,
       window.WC.ui.el("p.guess-prompt", { text: "Which country is this?" }),
       optionsWrap,
       feedback

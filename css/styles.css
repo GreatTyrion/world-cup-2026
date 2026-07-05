@@ -491,7 +491,11 @@ body {
   font-weight: 800; letter-spacing: 2px; color: var(--ink-soft);
   background: #eef3f8; border-radius: 8px; padding: 2px 12px;
 }
-.guess-prompt { text-align: center; font-size: 1.2rem; font-weight: 700; margin: 0 0 14px; }
+.guess-hint { display: block; margin: 0 auto 8px; font-size: 0.98rem; padding: 8px 18px; }
+/* the hint code is revealed on demand — this must beat the display:inline-block above */
+.guess-flag__code[hidden] { display: none; }
+.guess-flag .guess-flag__code { animation: pop 0.3s ease; }
+.guess-prompt { text-align: center; font-size: 1.2rem; font-weight: 700; margin: 8px 0 14px; }
 
 /* ---------- flag match (memory) ---------- */
 .match-board {
